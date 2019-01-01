@@ -22,19 +22,21 @@
                 {{ end }}
               </div>
               <div id="posts-list">
-                {{ range .Data.Pages.GroupByDate "2006" -}}
+                {{ range (where .Data.Pages "Type" "pdf").GroupByDate "2006" -}}
                 <section>
                   <h1 class="site-date-catalog">{{ .Key }}</h1>
             
                   {{ range .Pages -}}
-                  <div class="row post-line">
-                    <div class="posts-date col-xs-2">
-                      <time datetime="{{ .Date.Format "2006-01-02 15:04:05 MST" }}">{{ .Date.Format "Jan 02"}}</time>
+                  {{ if eq .Type "pdf" }}
+                    <div class="row post-line">
+                      <div class="posts-date col-xs-2">
+                        <time datetime="{{ .Date.Format "2006-01-02 15:04:05 MST" }}">{{ .Date.Format "Jan 02"}}</time>
+                      </div>
+                      <div class="posts-title col-xs-10">
+                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                      </div>
                     </div>
-                    <div class="posts-title col-xs-10">
-                      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                    </div>
-                  </div>
+                  {{ end }}
                   {{ end }}
                 </section>
                 {{ end }}
@@ -43,7 +45,7 @@
               <div class="posts-footer">
                 {{ range .Site.Params.socials }}
                 <div class="posts-footer-item">
-                  <a href="{{ .link }}" target="_blank">{{ .name }}</a>
+                  <a href="{{ .link }}">{{ .name }}</a>
                 </div>
                 {{ end }}
               </div>
