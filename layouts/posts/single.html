@@ -8,10 +8,9 @@
         <div
           class="col-xs-12 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2"
         >
+          <a href="{{ .LanguagePrefix }}/"> <div class="head-line"></div> </a>
           <header class="post-header">
-            <div class="signatures site-title">
-              <a href="{{ .LanguagePrefix }}/">{{ .Site.Author.name }}</a>
-            </div>
+            <h1 class="post-title">{{ .Title }}</h1>
           </header>
 
           <div class="post-content markdown-body">{{ .Content }}</div>
