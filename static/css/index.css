@@ -1,7 +1,7 @@
 /* global */
 
 body {
-  font-family: "Arvo", Arial, Helvetica, sans-serif;
+  font-family: 'Arvo', Arial, Helvetica, sans-serif;
   margin: 0 20px;
 }
 
@@ -39,7 +39,7 @@ a {
 }
 
 .signatures {
-  font-family: "Permanent Marker", Impact, Charcoal, sans-serif;
+  font-family: 'Permanent Marker', Impact, Charcoal, sans-serif;
 }
 
 .signatures a {
@@ -51,6 +51,12 @@ a {
   width: 100%;
   background-color: #000;
   margin: 30px 0;
+}
+
+.header-item {
+  margin-right: 12px;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .lang-switch {
@@ -92,7 +98,8 @@ a {
   margin-top: 12px;
 }
 
-.post-date {}
+.post-date {
+}
 
 .post-author {
   float: right;
@@ -121,7 +128,7 @@ a {
 }
 
 #disqus_thread:after {
-  content: "";
+  content: '';
   display: block;
   height: 55px;
   width: 100%;
